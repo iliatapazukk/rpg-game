@@ -14,6 +14,8 @@ module.exports = {
       'no-nested-ternary': 0,
       'indent': 0,
       'default-case': 0,
-      'no-unused-expressions': 0
+      'no-unused-expressions': 0,
+      'no-console': 0,
+      'no-plusplus': 0,
   },
 };
