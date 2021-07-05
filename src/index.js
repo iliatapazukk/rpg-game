@@ -13,9 +13,11 @@ let bottomPressed = false;
 let upPressed = false;
 let leftPressed = false;
 let rightPressed = false;
-const rect = 600;
-let pY = rect / 2 - spriteW / 2;
-let pX = rect / 2 - spriteH / 2;
+const rect = canvas.offsetWidth;
+const canvasW = canvas.getBoundingClientRect().width;
+const canvasH = canvas.getBoundingClientRect().height;
+let pY = canvasH / 2 - spriteW / 2;
+let pX = canvasW / 2 - spriteH / 2;
 let direction = 0;
 
 function keyDownHandler(event) {
@@ -67,8 +69,8 @@ img.addEventListener('load', () => {
     arrKeyPressed ? (cycle = (cycle + 1) % shots) : null;
     if (bottomPressed === true) {
       pY += 10;
-      if (pY > rect - 48) {
-        pY = rect - 48;
+      if (pY > canvasH - spriteH) {
+        pY = canvasH - spriteH;
       }
       direction = 0;
     } else if (upPressed === true) {
@@ -76,19 +78,19 @@ img.addEventListener('load', () => {
       if (pY < 0) {
         pY = 0;
       }
-      direction = 144;
+      direction = spriteH * 3;
     } else if (leftPressed === true) {
       pX -= 10;
       if (pX < 0) {
         pX = 0;
       }
-      direction = 48;
+      direction = spriteW;
     } else if (rightPressed === true) {
       pX += 10;
-      if (pX > rect - 48) {
-        pX = rect - 48;
+      if (pX > canvasW - spriteW) {
+        pX = canvasW - spriteW;
       }
-      direction = 96;
+      direction = spriteW * 2;
     }
 
     ctx.clearRect(0, 0, rect, rect);
