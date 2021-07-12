@@ -24,5 +24,6 @@ module.exports = {
       'prefer-const': 0, // включить в дальнейшем
       'object-shorthand': 0, // включить в дальнейшем
       'func-names': 0, // включить в дальнейшем
+      'object-curly-newline': 0, // включить в дальнейшем
   },
 };
