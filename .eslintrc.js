@@ -22,5 +22,7 @@ module.exports = {
       'no-restricted-syntax': 0, // включить в дальнейшем
       'guard-for-in': 0, // включить в дальнейшем
       'prefer-const': 0, // включить в дальнейшем
+      'object-shorthand': 0, // включить в дальнейшем
+      'func-names': 0, // включить в дальнейшем
   },
 };

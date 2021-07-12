@@ -1,3 +1,5 @@
+import EventSourceMixin from '../common/EventSourceMixin';
+
 class ClientEngine {
   constructor(canvas) {
     Object.assign(this, {
@@ -20,6 +22,7 @@ class ClientEngine {
     ctx.fillStyle = 'black';
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    this.trigger('render', timestamp);
     this.initNextFrame();
   }
 
@@ -53,5 +56,7 @@ class ClientEngine {
     });
   }
 }
+
+Object.assign(ClientEngine.prototype, EventSourceMixin);
 
 export default ClientEngine;

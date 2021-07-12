@@ -16,8 +16,13 @@ class ClientGame {
   }
 
   initEngine() {
-    this.engine.loadSprites(sprites).then(() => {
-      this.engine.start();
+    this.engine
+      .loadSprites(sprites)
+      .then(() => {
+        this.engine.on('render', (_, time) => {
+          // console.log('!!! render:', time)
+        });
+        this.engine.start();
     });
   }
 
