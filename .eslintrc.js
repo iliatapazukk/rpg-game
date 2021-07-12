@@ -17,5 +17,6 @@ module.exports = {
       'no-unused-expressions': 0,
       'no-console': 0,
       'no-plusplus': 0,
+      'no-commented-out-code': 0,
   },
 };

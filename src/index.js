@@ -1,10 +1,26 @@
 import './index.scss';
 import gamePerson from './assets/Male-5-Walk.png';
+import terraAtlas from './assets/terrain.png'
+import worldConfig from './configs/world.json'
+import sprites from './configs/sprites.js'
 
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const spriteW = 48;
 const spriteH = 48;
+
+const terra = document.createElement('img');
+terra.src = terraAtlas;
+terra.addEventListener('load', () => {
+  const {map} = worldConfig;
+  map.forEach((cfgRow, y) => {
+    cfgRow.forEach((cfgCell, x) => {
+      const [sX, sY, sW, sH] = sprites.terrain[cfgCell[0]].frames[0];
+      ctx.drawImage(terra, sX, sY, sW, sH, x * spriteW, y * spriteH, spriteW, spriteH)
+    })
+  })
+})
+
 const shots = 3;
 let cycle = 0;
 
@@ -60,12 +76,11 @@ function keyUpHandler(event) {
 
 document.addEventListener('keydown', keyDownHandler);
 document.addEventListener('keyup', keyUpHandler);
-
-const img = document.createElement('img');
-img.src = gamePerson;
+//
+// const img = document.createElement('img');
+// img.src = gamePerson;
 
 function walk(timestamp) {
-  console.log('!!! timestamp:', timestamp)
   arrKeyPressed ? (cycle = (cycle + 1) % shots) : null;
   if (bottomPressed === true) {
     pY += 10;
