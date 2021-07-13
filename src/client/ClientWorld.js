@@ -1,27 +1,28 @@
 class ClientWorld {
-  constructor(game, engine, levelCfg) {
+  constructor(game, engine, levelCfg, camera) {
     Object.assign(this, {
       game,
       engine,
       levelCfg,
       height: levelCfg.map.length,
       width: levelCfg.map[0].length,
+      camera: levelCfg.camera,
     });
   }
 
   init() {
-    this.levelCfg.world.forEach((item, indexX) => {
-      item.forEach((i, indexY) => {
+    this.levelCfg.map.forEach((item, rowX) => {
+      item.forEach((i, rowY) => {
         this.engine.renderSpriteFrame({
           sprite: ['terrain', i[0][0]],
           frame: 0,
-          x: (indexY * this.engine.canvas.width) / this.levelCfg.world.width,
-          y: (indexX * this.engine.canvas.height) / this.levelCfg.world.height,
-          w: this.engine.canvas.width /  this.levelCfg.world.width,
-          h: this.engine.canvas.height / this.levelCfg.world.height,
+          x: (rowY * this.engine.canvas.width) / this.levelCfg.camera.width,
+          y: (rowX * this.engine.canvas.height) / this.levelCfg.camera.height,
+          w: this.engine.canvas.width / this.levelCfg.camera.width,
+          h: this.engine.canvas.height / this.levelCfg.camera.height,
         });
-      })
-    })
+      });
+    });
   }
 }
 
