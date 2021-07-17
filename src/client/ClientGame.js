@@ -36,6 +36,60 @@ class ClientGame {
         this.map.render(time);
       });
       this.engine.start();
+      this.initKeys();
+      // отключение скролла клавишами при передвижении игрока
+      window.addEventListener(
+        'keydown',
+        function (e) {
+          if (['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].indexOf(e.code) > -1) {
+            e.preventDefault();
+          }
+        },
+        false,
+      );
+    });
+  }
+
+  initKeys() {
+    this.engine.input.onKey({
+      ArrowLeft: (keydown) => {
+        console.log('!!! ArrowLeft:');
+        if (keydown) {
+          this.player.moveByCellCoord(-1, 0, (cell) => {
+            return cell.findObjectsByType('grass').length;
+          });
+        }
+      },
+    });
+    this.engine.input.onKey({
+      ArrowRight: (keydown) => {
+        console.log('!!! ArrowRight:');
+        if (keydown) {
+          this.player.moveByCellCoord(+1, 0, (cell) => {
+            return cell.findObjectsByType('grass').length;
+          });
+        }
+      },
+    });
+    this.engine.input.onKey({
+      ArrowUp: (keydown) => {
+        console.log('!!! ArrowTop:');
+        if (keydown) {
+          this.player.moveByCellCoord(0, -1, (cell) => {
+            return cell.findObjectsByType('grass').length;
+          });
+        }
+      },
+    });
+    this.engine.input.onKey({
+      ArrowDown: (keydown) => {
+        console.log('!!! ArrowBottom:');
+        if (keydown) {
+          this.player.moveByCellCoord(0, +1, (cell) => {
+            return cell.findObjectsByType('grass').length;
+          });
+        }
+      },
     });
   }
 
