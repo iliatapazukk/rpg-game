@@ -9,11 +9,16 @@ class ClientGame {
     Object.assign(this, {
       cfg,
       gameObjects,
+      player: null,
     });
 
     this.engine = this.createEngine();
     this.map = this.createWorld();
     this.initEngine();
+  }
+
+  setPlayer(player) {
+    this.player = player;
   }
 
   createEngine() {
@@ -26,7 +31,6 @@ class ClientGame {
 
   initEngine() {
     this.engine.loadSprites(sprites).then(() => {
-      console.log('!!! initEngine:');
       this.map.init();
       this.engine.on('render', (_, time) => {
         this.map.render(time);
