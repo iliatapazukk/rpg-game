@@ -37,7 +37,7 @@ class ClientGame {
     this.engine.loadSprites(sprites).then(() => {
       this.map.init();
       this.engine.on('render', (_, time) => {
-        this.engine.camera.focusAtGameObject(this.player)
+        this.engine.camera.focusAtGameObject(this.player);
         this.map.render(time);
       });
       this.engine.start();
@@ -72,10 +72,10 @@ class ClientGame {
 
   initKeys() {
     this.engine.input.onKey({
-      ArrowLeft: (keydown) =>  keydown && this.movePlayerToDir('left'),
-      ArrowRight: (keydown) =>  keydown && this.movePlayerToDir('right'),
-      ArrowDown: (keydown) =>  keydown && this.movePlayerToDir('down'),
-      ArrowUp: (keydown) =>  keydown && this.movePlayerToDir('up'),
+      ArrowLeft: (keydown) => keydown && this.movePlayerToDir('left'),
+      ArrowRight: (keydown) => keydown && this.movePlayerToDir('right'),
+      ArrowDown: (keydown) => keydown && this.movePlayerToDir('down'),
+      ArrowUp: (keydown) => keydown && this.movePlayerToDir('up'),
     });
   }
 
