@@ -4,7 +4,6 @@ import PositionedObject from './PositionedObject';
 class MovableObject extends PositionedObject {
   constructor(cfg) {
     super(cfg);
-
     Object.assign(
       this,
       {

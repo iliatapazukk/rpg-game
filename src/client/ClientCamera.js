@@ -1,6 +1,6 @@
-import MovableObject from '../common/MovableObject';
+import MovableObject from '../common/MovableObject'
 
-class ClientCamera extends MouseEvent {
+class ClientCamera extends MovableObject {
   constructor(cfg) {
     super(cfg);
 
