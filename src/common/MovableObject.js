@@ -30,6 +30,7 @@ class MovableObject extends PositionedObject {
       const dy = animateEx(me.deltaY, me.motionStartTime, time, me.speed);
       const newX = me.toX + dx.offset - me.deltaX;
       const newY = me.toY + dy.offset - me.deltaY;
+      me.motionProgress = dx.progress; // запоминаем текущий прогресс анимации
       if (newX === me.toX && newY === me.toY) {
         me.speed = 0;
         me.motionStartTime = 0;
