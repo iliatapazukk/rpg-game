@@ -47,9 +47,10 @@ class ClientGameObject extends MovableObject {
       this.detouch();
       this.cell = newCell;
       newCell.addGameObject(this);
-
-      const { x, y, width, height } = newCell;
-      Object.assign(this, { x, y, width, height });
+      console.log('!!! newCell:', newCell);
+      this.moveTo(newCell.x, newCell.y, true, 200);
+      // const { x, y, width, height } = newCell;
+      // Object.assign(this, { x, y, width, height });
     }
   }
 
