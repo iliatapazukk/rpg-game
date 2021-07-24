@@ -68,7 +68,7 @@ class ClientGameObject extends MovableObject {
     const lengthFrame = state.frames.length;
     const animate = animateEx(lengthFrame, this.animationStartTime, time, state.duration, true);
     // eslint-disable-next-line no-bitwise
-    const frame = (lengthFrame + animate.offset | 0) % lengthFrame;
+    const frame = ((lengthFrame + animate.offset) | 0) % lengthFrame;
     return state.frames[frame];
   }
 
