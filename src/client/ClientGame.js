@@ -52,6 +52,11 @@ class ClientGame {
         },
         false,
       );
+      // установка фокуса в поле игры фокус
+      document.getElementById(this.cfg.tagId).setAttribute('tabindex', '0');
+      document.getElementById(this.cfg.tagId).focus();
+      // скролл к игровому полю
+      document.getElementById(this.cfg.tagId).scrollIntoView();
     });
   }
 
