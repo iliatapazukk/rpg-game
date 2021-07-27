@@ -4,7 +4,6 @@ export function clamp(x, from_x, to_x) {
 
   return x;
 }
-
 export function animateEx(dx, startTime, currentTime, speed, looped = false) {
   const diff = currentTime - startTime;
   let time = (speed && diff / speed) || 0;

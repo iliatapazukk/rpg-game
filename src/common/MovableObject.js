@@ -60,6 +60,7 @@ class MovableObject extends PositionedObject {
         newY = clamp(y, 0, world.height - height);
       }
     }
+
     if (smooth) {
       this.startMotion(newX, newY, speed);
     } else {
