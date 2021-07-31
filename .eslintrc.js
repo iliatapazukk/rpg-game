@@ -13,7 +13,8 @@ module.exports = {
     'max-len': 0,
     quotes: 0,
     'arrow-body-style': 0,
-    'camelcase': 0,
+    camelcase: 0,
+    'no-return-assign': 0,
     'no-nested-ternary': 0,
     'no-param-reassign': 0,
     indent: 0,
@@ -32,5 +33,7 @@ module.exports = {
     'object-shorthand': 0, // включить в дальнейшем
     'func-names': 0, // включить в дальнейшем
     'object-curly-newline': 0, // включить в дальнейшем
+    'implicit-arrow-linebreak': 0,
+    'function-paren-newline': 0,
   },
 };
