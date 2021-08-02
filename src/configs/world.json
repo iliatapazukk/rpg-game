@@ -6,7 +6,7 @@
         "y": 4
     },
     "layers": [
-        { "isStatic": true },
+        { "isStatic": false },
         { "isStatic": false },
         { "isStatic": false }
     ],
