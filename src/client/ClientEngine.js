@@ -116,7 +116,6 @@ class ClientEngine {
       );
     }
   }
-
 }
 
 Object.assign(ClientEngine.prototype, EventSourceMixin);

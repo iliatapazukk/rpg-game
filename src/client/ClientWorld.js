@@ -79,8 +79,7 @@ class ClientWorld extends PositionedObject {
       layer.isRendered = true;
     }
 
-    engine.renderCanvas(layerName, cameraPos, { x: 0, y: 0, width: cameraPos.width, height: cameraPos.height});
-
+    engine.renderCanvas(layerName, cameraPos, { x: 0, y: 0, width: cameraPos.width, height: cameraPos.height });
   }
 
   cellAt(col, row) {
