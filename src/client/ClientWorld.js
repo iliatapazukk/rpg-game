@@ -97,10 +97,7 @@ class ClientWorld extends PositionedObject {
   cellAtXY(x, y) {
     const { width, height, cellWidth, cellHeight } = this;
 
-    return this.cellAt(
-      clamp(x, 0, width - 1) / cellWidth | 0,
-      clamp(y, 0, height - 1) / cellHeight | 0,
-    );
+    return this.cellAt((clamp(x, 0, width - 1) / cellWidth) | 0, (clamp(y, 0, height - 1) / cellHeight) | 0);
   }
 
   getRenderRange() {
