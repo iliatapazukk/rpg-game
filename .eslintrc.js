@@ -35,5 +35,6 @@ module.exports = {
     'object-curly-newline': 0, // включить в дальнейшем
     'implicit-arrow-linebreak': 0,
     'function-paren-newline': 0,
+    'no-bitwise': 0,
   },
 };
