@@ -127,7 +127,8 @@ class ClientEngine {
       horizontalPadding: 3,
       textAlign: 'center',
       baseLine: 'center',
-      ...opt };
+      ...opt,
+    };
     console.log('!!! options:', options);
     const ctx = this.ctx;
     const camera = this.camera;

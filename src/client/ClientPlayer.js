@@ -7,7 +7,6 @@ class ClientPlayer extends ClientGameObject {
     this.playerName = 'Сhewbacca';
     const world = cfg.cell.world;
     world.game.setPlayer(this);
-
   }
 
   render(time) {
@@ -20,7 +19,6 @@ class ClientPlayer extends ClientGameObject {
       minWidth: world.cellWidth,
       maxWidth: world.cellWidth * 1.5,
       text: this.playerName,
-
     });
   }
 }

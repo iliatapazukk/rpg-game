@@ -33,15 +33,14 @@ class ClientCell extends PositionedObject {
     // this.objects = cellCfg[0].map((objCfg) => new ClientGameObject({ cell: this, objCfg }));
     this.objects = cellCfg.map((layer, layerId) =>
       layer.map((objCfg) => {
-          let ObjectClass;
-          ObjectClass = objCfg.class ? objectClasses[objCfg.class] : ClientGameObject;
-          return new ObjectClass({
-            cell: this,
-            objCfg,
-            layerId,
-          });
-        },
-      ),
+        let ObjectClass;
+        ObjectClass = objCfg.class ? objectClasses[objCfg.class] : ClientGameObject;
+        return new ObjectClass({
+          cell: this,
+          objCfg,
+          layerId,
+        });
+      }),
     );
   }
 
