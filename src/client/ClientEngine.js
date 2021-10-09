@@ -139,7 +139,7 @@ class ClientEngine {
 
     const measure = ctx.measureText(options.text);
     const textHeight = measure.actualBoundingBoxAscent;
-
+    // trst
     // отображение плашки с именем игрока
     const barWidth = clamp(measure.width + 2 * options.horizontalPadding, options.minWidth, options.maxWidth);
     const barHeight = textHeight + 2 * options.verticalPadding;
